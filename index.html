@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="./js/script.js"></script>
+</head>
+<body>
+<header>
+    <h1>🎉 Feliz Aniversário, Amiga! 🎉</h1>
+    <p>Bem-vinda ao seu site especial de aniversário!</p>
+    <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="mensagem.html">Mensagem Especial</a>
+        <a href="jogos.html">Mini Jogos</a>
+        <a href="galeria.html">Galeria</a>
+    </nav>
+</header>
+
+<section id="main-section">
+    <button class="confetti-button" onclick="triggerConfetti()">Clique Aqui 🎉</button>
+</section>
+
+<!-- Birthday Message Section (Initially Hidden) -->
+<section id="birthday-message-section" style="display: none;">
+    <div class="birthday-message">
+        <h2>🎂 Feliz Aniversário, Vanessa! 🎂</h2>
+        <p>Que hoje seja um dia muito especial e se repita muitas vezes! 🎉</p>
+        <img src="./images/DCIM_108APPLE_IMG_8894.JPG" alt="Birthday Image" style="max-width: 100%; height: auto;">
+    </div>
+</section>
+
+<!-- Music Button in Top-Right Corner -->
+<button class="music-button" onclick="playMusic()">🎵</button>
+
+<footer>
+    <p>Feito com ❤️ por Aurora!</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
+<script>
+    function triggerConfetti() {
+        // Trigger confetti
+        confetti({
+            particleCount: 150,
+            spread: 100,
+            angle: 60,
+            startVelocity: 40,
+            ticks: 300,
+            origin: { x: 0.5, y: 0.6 },
+        });
+
+        // Hide the confetti button permanently after it's clicked
+        document.querySelector('.confetti-button').style.display = 'none'; // Hide the button
+
+        // Show the birthday message after confetti
+        document.getElementById("birthday-message-section").style.display = "block";
+    }
+
+    function playMusic() {
+        // Implement your music play logic here (like playing a background track)
+        alert('Música de fundo tocando!');
+    }
+</script>
+
+<style>
+    /* Confetti Button Styling */
+    .confetti-button {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        font-size: 18px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    .confetti-button:hover {
+        transform: scale(1.2) translate(-50%, -50%);
+    }
+
+    /* Birthday Message Section Styling */
+    #birthday-message-section {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+        background-color: #ffefd5;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .birthday-message h2 {
+        color: #ffd700; /* Gold */
+        font-size: 2.5rem;
+    }
+
+    .birthday-message p {
+        font-size: 1.2rem;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Music Button Styling */
+    .music-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #ffd700; /* Gold */
+        color: black;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    .music-button:hover {
+        transform: scale(1.2);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+</body>
+</html>

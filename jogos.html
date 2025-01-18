@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Jogos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Importing a stylish Google font */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Poppins:wght@300;600&display=swap');
+
+        /* Body and header font settings */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: 600;
+        }
+
+        header nav a:hover {
+            background-color: #ff6347;
+        }
+
+        /* Styling the main heading */
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 2em;
+            color: #34495e;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Label for options with cool font and color */
+        label {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #34495e;
+            margin: 20px 0 10px;
+            text-align: center;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Style for the circle images */
+        .image-option {
+            display: inline-block;
+            margin: 10px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .image-option.selected {
+            border-color: #ffd700; /* Gold color when selected */
+        }
+
+        .image-option img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        /* Container for the images */
+        #cities, #activities, #foods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Style for the buttons */
+        #submit-button, #reset-button {
+            background-color: #ffd700;
+            color: black;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #submit-button:hover, #reset-button:hover {
+            background-color: #ff6347; /* Tomato color on hover */
+        }
+
+        /* Style for the selected images */
+        .selected {
+            border-color: #ffd700;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Form layout and spacing */
+        form {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #itinerary {
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Mini Jogos</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="mensagem.html">Mensagem Especial</a>
+        <a href="jogos.html">Mini Jogos</a>
+        <a href="galeria.html">Galeria</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Planejador de Viagens</h2>
+    <form id="tripForm">
+        <label>Escolha uma cidade:</label>
+        <div id="cities">
+            <div class="image-option" id="paris" onclick="selectImage('Paris')">
+                <img src="./images/paris.jpg" alt="Paris">
+            </div>
+            <div class="image-option" id="capetown" onclick="selectImage('Cidade do Cabo')">
+                <img src="./images/capetown.jpg" alt="Cape Town">
+            </div>
+            <div class="image-option" id="seoul" onclick="selectImage('Seul')">
+                <img src="./images/seoul.jpg" alt="Seoul">
+            </div>
+            <div class="image-option" id="tokyo" onclick="selectImage('Tóquio')">
+                <img src="./images/tokyo.jpg" alt="Tokyo">
+            </div>
+            <div class="image-option" id="puntacana" onclick="selectImage('Punta Cana')">
+                <img src="./images/puntacana.jpg" alt="Punta Cana">
+            </div>
+        </div><br>
+
+        <label>Escolha uma atividade:</label>
+        <div id="activities">
+            <div class="image-option" id="restaurant" onclick="selectActivity('Restaurante')">
+                <img src="./images/resto.jpg" alt="Restaurant">
+            </div>
+            <div class="image-option" id="game" onclick="selectActivity('Jogo')">
+                <img src="./images/game.jpg" alt="Game">
+            </div>
+            <div class="image-option" id="shopping" onclick="selectActivity('Compras')">
+                <img src="./images/shop.jpg" alt="Shopping">
+            </div>
+            <div class="image-option" id="skiing" onclick="selectActivity('Esqui')">
+                <img src="./images/skying.jpg" alt="Skiing">
+            </div>
+            <div class="image-option" id="girlstrip" onclick="selectActivity('Viagem com amigas')">
+                <img src="./images/girls.jpg" alt="Girls Trip">
+            </div>
+        </div><br>
+
+        <label>Escolha uma opção de comida:</label>
+        <div id="foods">
+            <div class="image-option" id="food1" onclick="selectFood('Comida angolana')">
+                <img src="./images/food.jpg" alt="Food">
+            </div>
+            <div class="image-option" id="sweet" onclick="selectFood('Petit gateau')">
+                <img src="./images/s3.jpg" alt="Sweet">
+            </div>
+            <div class="image-option" id="meat" onclick="selectFood('Hambúrguer')">
+                <img src="./images/bug.jpg" alt="Meat">
+            </div>
+            <div class="image-option" id="seafood" onclick="selectFood('Marisco')">
+                <img src="./images/fish.jpg" alt="Seafood">
+            </div>
+            <div class="image-option" id="chicken" onclick="selectFood('Frango à milanesa')">
+                <img src="./images/ch.jpg" alt="Chicken">
+            </div>
+            <div class="image-option" id="vegetarian" onclick="selectFood('Prato vegetariano')">
+                <img src="./images/veg.jpg" alt="Vegetarian">
+            </div>
+        </div><br>
+
+        <button type="button" id="submit-button" onclick="generateItinerary()">Adicionar ao Planejamento</button>
+        <button type="button" id="reset-button" onclick="resetSelection()">Resetar Seleções</button>
+    </form>
+
+    <div id="itinerary"></div>
+    <button type="button" onclick="showSummary()">Ver Resumo</button>
+</section>
+
+<footer>
+    <p>Feito com ❤️ por sua melhor amiga!</p>
+</footer>
+
+<script>
+    // Variables to store selections
+    let selectedCity = '';
+    let selectedActivity = '';
+    let selectedFood = '';
+
+    // Function to select the city
+    function selectImage(id) {
+        const images = document.querySelectorAll('#cities .image-option');
+        images.forEach((img) => img.classList.remove('selected'));
+        document.getElementById(id).classList.add('selected');
+        selectedCity = id;  // Store selected city
+    }
+
+    // Function to select activity
+    function selectActivity(id) {
+        const activities = document.querySelectorAll('#activities .image-option');
+        activities.forEach((activity) => activity.classList.remove('selected'));
+        document.getElementById(id).classList.add('selected');
+        selectedActivity = id;  // Store selected activity
+    }
+
+    // Function to select food
+    function selectFood(id) {
+        const foods = document.querySelectorAll('#foods .image-option');
+        foods.forEach((food) => food.classList.remove('selected'));
+        document.getElementById(id).classList.add('selected');
+        selectedFood = id;  // Store selected food
+    }
+
+    // Function to generate the itinerary
+    function generateItinerary() {
+        if (!selectedCity || !selectedActivity || !selectedFood) {
+            alert('Por favor, selecione todos os itens!');
+            return;
+        }
+
+        const itinerary = `Você irá para ${selectedCity}, fará a atividade de ${selectedActivity} e comerá ${selectedFood}.`;
+        document.getElementById('itinerary').innerText = itinerary;
+    }
+
+    // Function to reset the selections
+    function resetSelection() {
+        document.querySelectorAll('.image-option').forEach((img) => img.classList.remove('selected'));
+        selectedCity = '';
+        selectedActivity = '';
+        selectedFood = '';
+        document.getElementById('itinerary').innerText = '';  // Clear itinerary
+    }
+
+    // Function to show a summary (can be customized)
+    function showSummary() {
+        alert('Aqui está o seu resumo de viagem!');
+    }
+</script>
+
+</body>
+</html>

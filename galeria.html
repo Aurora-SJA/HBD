@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet">
+    <script defer src="./js/script.js"></script>
+</head>
+<body>
+<header>
+    <h1>Galeria de Memórias</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="mensagem.html">Mensagem Especial</a>
+        <a href="jogos.html">Mini Jogos</a>
+        <a href="galeria.html">Galeria</a>
+    </nav>
+</header>
+
+<main>
+    <section id="gallery">
+        <div class="carousel">
+            <div class="slides">
+                <img src="./images/DCIM_108APPLE_IMG_8895.JPG" alt="Foto 1" />
+                <img src="./images/DCIM_108APPLE_IMG_8897.JPG" alt="Foto 2" />
+                <img src="./images/DCIM_108APPLE_IMG_8898.JPG" alt="Foto 3" />
+                <img src="./images/DCIM_108APPLE_IMG_8904.PNG" alt="Foto 1" />
+                <img src="./images/DCIM_108APPLE_IMG_8907.JPG" alt="Foto 2" />
+                <img src="./images/DCIM_108APPLE_IMG_8926.JPG" alt="Foto 3" />
+            </div>
+        </div>
+
+        <h2>📸 Birthday Girl</h2>
+        <div class="carousel2">
+            <img src="./images/DCIM_108APPLE_IMG_8900.PNG" alt="Foto 1">
+            <img src="./images/DCIM_108APPLE_IMG_8901.PNG" alt="Foto 2">
+            <img src="./images/DCIM_108APPLE_IMG_8902.PNG" alt="Foto 3">
+            <img src="./images/DCIM_108APPLE_IMG_8903.PNG" alt="Foto 1">
+            <img src="./images/DCIM_108APPLE_IMG_8905.JPG" alt="Foto 2">
+            <img src="./images/DCIM_108APPLE_IMG_8922.JPG" alt="Foto 3">
+            <img src="./images/DCIM_108APPLE_IMG_8923.JPG" alt="Foto 1">
+            <img src="./images/DCIM_108APPLE_IMG_8924.JPG" alt="Foto 2">
+            <img src="./images/DCIM_108APPLE_IMG_8925.JPG" alt="Foto 3">
+       
+        </div>
+        
+        <h2>📸 Nossas Memórias</h2>
+        <div class="carousel2">
+            <img src="./images/DCIM_108APPLE_IMG_8908.JPG" alt="Foto 1">
+            <img src="./images/DCIM_108APPLE_IMG_8909.JPG" alt="Foto 2">
+            <img src="./images/DCIM_108APPLE_IMG_8912.JPG" alt="Foto 3">
+            <img src="./images/DCIM_108APPLE_IMG_8913.JPG" alt="Foto 1">
+            <img src="./images/DCIM_108APPLE_IMG_8928.JPG" alt="Foto 2">
+            <img src="./images/DCIM_108APPLE_IMG_8927.JPG" alt="Foto 3">
+        </div>
+
+        <h2>🎥 Mensagem Especial</h2>
+        <p>Ninguém esqueceu de você!</p>
+        <video controls>
+            <source src="./images/anita.mp4" type="video/mp4">
+            Seu navegador não suporta o vídeo.
+        </video>
+        <p>Apenas precisávamos de um pouquinho mais de tempo para um presente especial.</p>
+        <video controls>
+            <source src="./images/anitaa.mp4" type="video/mp4">
+            Seu navegador não suporta o vídeo.
+        </video>
+        <p>Eu nunca esqueceria o dia em que uma das pessoas mais importantes na minha vida nasceu.</p>
+        <video controls>
+            <source src="./images/video.mp4" type="video/mp4">
+            Seu navegador não suporta o vídeo.
+        </video>
+
+        <h2>🎥 Extra - Among Us</h2>
+        <p>Ainda lembro que você gostava de usar o preto e o ciano.</p>
+        <img src="./images/amongus.jpg" alt="Foto 3">
+        <p>Você era a única capaz de me enganar como impostor, e juntas éramos um grande time.</p>
+        <img src="./images/amongus2.jpg" alt="Foto 3">
+        <video controls>
+            <source src="./images/36a0a121cd90eafa9f9e6aa02a5e55e5.mp4" type="video/mp4">
+            Seu navegador não suporta o vídeo.
+        </video>
+    </section>
+</main>
+
+<footer>
+    <p>Feito com ❤️ por sua melhor amiga!</p>
+</footer>
+
+<script>
+    let currentSlide = 0;
+    
+    function showNextSlide() {
+        const slides = document.querySelector(".slides");
+        currentSlide = (currentSlide + 1) % slides.children.length;
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    
+    setInterval(showNextSlide, 3000); // Troca a foto a cada 3 segundos
+</script>
+
+<style>
+    /* General Styling */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Poppins:wght@300;600&display=swap');
+
+/* Body and header font settings */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #020202;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+header nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: 600;
+        }
+
+        header nav a:hover {
+            background-color: #ff6347;
+        }
+
+    /* Main Content Area */
+    main {
+        flex: 1; /* Ensures content grows without affecting footer placement */
+        padding: 2rem;
+    }
+
+
+    header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+
+    /* Gallery Styles */
+    #gallery {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slides img {
+        width: 100%;
+        height: auto;
+        max-height: 500px; /* Limit the max height of images */
+        object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+        flex-shrink: 0;
+    }
+
+    .carousel2 {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .carousel2 img {
+        max-width: 100%;
+        height: auto;
+        max-height: 300px; /* Limit the max height for carousel2 images */
+        object-fit: contain; /* Ensures the image fits within the given area */
+    }
+
+    /* Video styles */
+    video {
+        width: 100%;
+        max-width: 800px; /* Limit the max width of the video */
+        height: auto;
+        margin-top: 20px;
+    }
+
+    /* Navigation Styling */
+    nav a {
+        margin: 0 1rem;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #ff6347; /* Tomato color on hover */
+    }
+
+    /* Footer Styling */
+    footer {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        #gallery {
+            max-width: 90%; /* Allow gallery images to be larger on small screens */
+        }
+
+        .carousel2 img {
+            max-height: 250px; /* Reduce max height of smaller images */
+        }
+    }
+</style>
+
+</body>
+</html>
