@@ -26,3 +26,10 @@ function playMusic() {
     audio.play();
     alert("🎵 Música de fundo tocando!");
 }
+function playMuusic() {
+    const audio = new Audio("/gllo.mp3");
+    audio.loop = true;
+    audio.play();
+    alert("🎵 Música de fundo tocando!");
+}
+
